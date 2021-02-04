@@ -15,6 +15,13 @@ public class PlayerController : MonoBehaviour
     public Sprite crouchedSprite;
     public Sprite idleSprite;
 
+    [Header("Camera")]
+    public Transform cameraTarget;
+    [Range(0, 5)]
+    public float cameraTargetOffsetX;
+    [Range(0.5f, 5.0f)]
+    public float cameraTargetFlipSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +45,18 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+
+        bool isFacingRight = spriteRenderer.flipX == false;
+        float offsetTargetX = isFacingRight ? cameraTargetOffsetX : -cameraTargetOffsetX;
+        Vector3 cameraTargetLocalPosition = new Vector3(
+            offsetTargetX, 
+            cameraTarget.localPosition.y, 
+            cameraTarget.localPosition.z);
+
+        cameraTarget.localPosition = Vector3.Lerp(
+            cameraTarget.localPosition, 
+            cameraTargetLocalPosition, 
+            Time.deltaTime * cameraTargetFlipSpeed);
 
         //Pulo
         if (playerInput.IsJumpButtonDown())
