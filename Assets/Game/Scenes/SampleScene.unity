@@ -281,7 +281,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2, y: 1}
+    m_SensorSize: {x: 2.002451, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -703,7 +703,8 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: df72d97bae32378418e06baa2e1be3ef, type: 3}
   cameraTarget: {fileID: 1460476340}
   cameraTargetOffsetX: 2
-  cameraTargetFlipSpeed: 4
+  cameraTargetFlipSpeed: 5
+  characterSpeedInfluence: 0.5
 --- !u!114 &1679453538
 MonoBehaviour:
   m_ObjectHideFlags: 0
