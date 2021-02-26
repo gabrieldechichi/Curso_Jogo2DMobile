@@ -9,14 +9,16 @@ public class EnemyAIController : MonoBehaviour
 {
     CharacterMovement2D enemyMovement;
     CharacterFacing2D enemyFacing;
-    Vector2 movementInput;
+    
+    public Vector2 movementInput;
+
+    public bool isChasing;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyMovement = GetComponent<CharacterMovement2D>();
         enemyFacing = GetComponent<CharacterFacing2D>();
-        StartCoroutine(TEMP_Walk());
     }
 
     // Update is called once per frame
@@ -24,20 +26,5 @@ public class EnemyAIController : MonoBehaviour
     {
         enemyMovement.ProcessMovementInput(movementInput);
         enemyFacing.UpdateFacing(movementInput);
-    }
-
-    IEnumerator TEMP_Walk()
-    {
-        while (true)
-        {
-            movementInput.x = 1;
-            yield return new WaitForSeconds(1.0f);
-            movementInput.x = 0;
-            yield return new WaitForSeconds(2.0f);
-            movementInput.x = -1;
-            yield return new WaitForSeconds(1.0f);
-            movementInput.x = 0;
-            yield return new WaitForSeconds(2.0f);
-        }
     }
 }

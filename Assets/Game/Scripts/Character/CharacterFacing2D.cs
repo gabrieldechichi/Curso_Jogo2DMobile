@@ -12,12 +12,6 @@ public class CharacterFacing2D : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateFacing(Vector2 movementInput)
     {
         if (movementInput.x > 0)
