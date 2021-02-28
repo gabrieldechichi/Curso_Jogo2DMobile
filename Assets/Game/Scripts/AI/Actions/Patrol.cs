@@ -41,13 +41,13 @@ public class Patrol : BasePrimitiveAction
     {
         while (true)
         {
-            aiController.movementInput.x = 1;
+            aiController.MovementInput = new Vector2(1, 0);
             yield return new WaitForSeconds(1.0f);
-            aiController.movementInput.x = 0;
+            aiController.MovementInput = new Vector2(0, 0);
             yield return new WaitForSeconds(2.0f);
-            aiController.movementInput.x = -1;
+            aiController.MovementInput = new Vector2(-1, 0);
             yield return new WaitForSeconds(1.0f);
-            aiController.movementInput.x = 0;
+            aiController.MovementInput = new Vector2(0, 0);
             yield return new WaitForSeconds(2.0f);
         }
     }
