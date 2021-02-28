@@ -439,9 +439,9 @@ GameObject:
   - component: {fileID: 1318658587}
   - component: {fileID: 1318658585}
   - component: {fileID: 1318658586}
-  - component: {fileID: 1318658589}
   - component: {fileID: 1318658590}
   - component: {fileID: 1318658591}
+  - component: {fileID: 1318658589}
   m_Layer: 0
   m_Name: Chomper
   m_TagString: Untagged
@@ -572,8 +572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861012c6a37e57e40a73730e7f48214f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementInput: {x: 0, y: 0}
-  isChasing: 0
 --- !u!114 &1318658586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,7 +635,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1318658580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3261677d99af2c143875d6720659c8b8, type: 3}
+  m_Script: {fileID: 11500000, guid: c70c28a8b3399e04ea82b70679a682b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1318658590
@@ -859,8 +857,8 @@ GameObject:
   - component: {fileID: 1679453533}
   - component: {fileID: 1679453537}
   - component: {fileID: 1679453538}
-  - component: {fileID: 1679453539}
   - component: {fileID: 1679453541}
+  - component: {fileID: 1679453539}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -1030,7 +1028,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1679453531}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3261677d99af2c143875d6720659c8b8, type: 3}
+  m_Script: {fileID: 11500000, guid: b05bde4bb4b6fc249bf69422af89d440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &1679453540
