@@ -1,16 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Platformer2D.Character;
 
 [RequireComponent(typeof(CharacterMovement2D))]
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(CharacterFacing2D))]
+[RequireComponent(typeof(IDamageable))]
 public class PlayerController : MonoBehaviour
 {
     CharacterMovement2D playerMovement;
     CharacterFacing2D playerFacing;
     PlayerInput playerInput;
+    IDamageable damageable;
 
     [Header("Camera")]
 
@@ -35,6 +35,14 @@ public class PlayerController : MonoBehaviour
         playerMovement = GetComponent<CharacterMovement2D>();
         playerInput = GetComponent<PlayerInput>();
         playerFacing = GetComponent<CharacterFacing2D>();
+
+        damageable = GetComponent<IDamageable>();
+        damageable.OnDeath += OnDeath;
+    }
+
+    private void OnDestroy()
+    {
+        damageable.OnDeath -= OnDeath;
     }
 
     // Update is called once per frame
@@ -79,5 +87,11 @@ public class PlayerController : MonoBehaviour
 
         cameraTarget.localPosition = new Vector3(currentOffsetX, cameraTarget.localPosition.y, cameraTarget.localPosition.z);
         //
+    }
+
+    private void OnDeath()
+    {
+        enabled = false;
+        playerMovement.StopImmediately();
     }
 }
