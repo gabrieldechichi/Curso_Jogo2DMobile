@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
         public const string Horizontal = "Horizontal";
         public const string Vertical = "Vertical";
         public const string Jump = "Jump";
+        public const string Attack = "Attack";
     }
     public Vector2 GetMovementInput()
     {
@@ -50,5 +51,13 @@ public class PlayerInput : MonoBehaviour
         bool isKeyboardButtonUp = Input.GetKey(KeyCode.S) == false;
         bool isMobileButtonUp = CrossPlatformInputManager.GetAxisRaw(PlayerInputConstants.Vertical) >= 0;
         return isKeyboardButtonUp && isMobileButtonUp;
+    }
+
+    public bool IsAttackButtonDown()
+    {
+        bool isKeyboardButtonDown = Input.GetKeyDown(KeyCode.K);
+        bool isMobileButtonDown = CrossPlatformInputManager
+            .GetButtonDown(PlayerInputConstants.Attack);
+        return isKeyboardButtonDown || isMobileButtonDown;
     }
 }

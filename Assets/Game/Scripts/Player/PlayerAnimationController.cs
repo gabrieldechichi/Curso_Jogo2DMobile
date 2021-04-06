@@ -1,20 +1,18 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(IDamageable))]
+public static class PlayerAnimationKeys
+{
+    public const string IsAttacking = "IsAttacking";
+}
+
+[RequireComponent(typeof(PlayerController))]
 public class PlayerAnimationController : CharacterAnimationController
 {
-    private IDamageable damageable;
-
+    PlayerController playerController;
     protected override void Awake()
     {
         base.Awake();
-        damageable = GetComponent<IDamageable>();
-        damageable.OnDeath += OnDeath;
-    }
-
-    private void OnDestroy()
-    {
-        damageable.OnDeath -= OnDeath;
+        playerController = GetComponent<PlayerController>();
     }
 
     protected override void Update()
@@ -23,10 +21,8 @@ public class PlayerAnimationController : CharacterAnimationController
         animator.SetBool(CharacterMovementAnimationKeys.IsCrouching, characterMovement.IsCrouching);
         animator.SetFloat(CharacterMovementAnimationKeys.VerticalSpeed, characterMovement.CurrentVelocity.y / characterMovement.JumpSpeed);
         animator.SetBool(CharacterMovementAnimationKeys.IsGrounded, characterMovement.IsGrounded);
-    }
 
-    private void OnDeath()
-    {
-        animator.SetTrigger(DamageableAnimationKeys.TriggerDead);
+        animator.SetBool(PlayerAnimationKeys.IsAttacking,
+            playerController.Weapon != null && playerController.Weapon.IsAttacking);
     }
 }
