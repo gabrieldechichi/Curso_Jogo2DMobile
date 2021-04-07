@@ -4,9 +4,8 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: TilemapRock
   m_Shader: {fileID: 4800000, guid: b67e051d20f5e98469ac774ffb360da5, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -64,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MyNormalMap:
-        m_Texture: {fileID: 2800000, guid: b7403959e5b114044bf5e0831640eded, type: 3}
+        m_Texture: {fileID: 2800000, guid: a2a205aeb5f813046aa0a5f7da43d51d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
