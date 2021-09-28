@@ -1,0 +1,9 @@
+<linker>
+  <assembly fullname="Pada1" preserve="all"/>
+  <assembly fullname="BehaviorBricks" preserve="all"/>
+  <assembly fullname="Pada1.BBCore" preserve="all"/>
+  <assembly fullname="Pada1.BBCore.Framework" preserve="all"/>
+  <assembly fullname="Pada1.BBCore.Framework" preserve="all">
+    <type fullname="Pada1.BBCore.Framework.BT" preserve="all"/>
+  </assembly>
+</linker>
